@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>BiciTiangue Splash</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        overflow: hidden;
+        background: #0a0f1f;
+    }
+
+    .splash {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(circle at center, #0f1c3d, #050814);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Bicicleta */
+    .bike {
+        position: absolute;
+        width: 200px;
+        bottom: 120px;
+        left: 10%;
+        transition: all 1s ease;
+        filter: drop-shadow(0 0 10px #00aaff);
+    }
+
+    /* Fase 1: derrape */
+    .skid {
+        animation: skid 1.5s forwards;
+    }
+
+    @keyframes skid {
+        0% { transform: translateX(0) rotate(0); }
+        50% { transform: translateX(80px) rotate(-10deg); }
+        100% { transform: translateX(150px) rotate(5deg); }
+    }
+
+    /* Fase 2: aceleración */
+    .boost {
+        animation: boost 1.5s forwards;
+    }
+
+    @keyframes boost {
+        0% { transform: translateX(150px); }
+        100% { transform: translateX(350px) scale(1.1); }
+    }
+
+    /* Fase 3: despegue */
+    .launch {
+        animation: launch 2s forwards;
+    }
+
+    @keyframes launch {
+        0% { transform: translate(350px, 0) rotate(0); }
+        100% { transform: translate(500px, -400px) rotate(-25deg) scale(0.8); }
+    }
+
+    /* humo */
+    .smoke {
+        position: absolute;
+        bottom: 110px;
+        left: 10%;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(255,255,255,0.5), transparent);
+        opacity: 0;
+        filter: blur(10px);
+    }
+
+    .smoke.active {
+        animation: smokeAnim 2s forwards;
+    }
+
+    @keyframes smokeAnim {
+        0% { opacity: 0.7; transform: scale(0.5); }
+        100% { opacity: 0; transform: scale(2); }
+    }
+
+    /* Barra de carga */
+    .loader {
+        position: absolute;
+        bottom: 40px;
+        width: 70%;
+        height: 12px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.1);
+        overflow: hidden;
+    }
+
+    .progress {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #00aaff, #00e0ff);
+        transition: width 0.3s;
+    }
+
+    /* Texto final */
+    .logo {
+        position: absolute;
+        font-size: 4rem;
+        color: #00aaff;
+        opacity: 0;
+        text-shadow: 0 0 20px #00aaff, 0 0 40px #0088ff;
+        transform: scale(0.5);
+        transition: all 1.5s ease;
+    }
+
+    .logo.show {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    .splash.fade-out {
+        animation: fadeOut 2s forwards;
+    }
+
+    @keyframes fadeOut {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+</style>
+</head>
+<body>
+
+<div class="splash">
+
+    <!-- Puedes reemplazar esta imagen por tu propia bici -->
+    <img src="./img/BTSplash.png" class="bike" id="bike">
+
+    <div class="smoke" id="smoke"></div>
+
+    <div class="logo" id="logo">BiciTiangue</div>
+
+    <div class="loader">
+        <div class="progress" id="progress"></div>
+    </div>
+
+    <div class="splash.fade-out"></div>
+
+</div>
+
+<script>
+
+let bike = document.getElementById("bike");
+let progress = document.getElementById("progress");
+let logo = document.getElementById("logo");
+let smoke = document.getElementById("smoke");
+
+let value = 0;
+
+// Animación sincronizada
+let interval = setInterval(() => {
+
+    value++;
+
+    progress.style.width = value + "%";
+
+    // FASE 1: Derrape
+    if (value === 10) {
+        bike.classList.add("skid");
+        smoke.classList.add("active");
+    }
+
+    // FASE 2: Aceleración
+    if (value === 40) {
+        bike.classList.remove("skid");
+        bike.classList.add("boost");
+    }
+
+    /*
+    // FASE 3: Despegue tipo jet
+    if (value === 70) {
+        bike.classList.remove("boost");
+        bike.classList.add("launch");
+    }
+    */
+
+    // FASE FINAL: Logo
+    if (value >= 80) {
+        bike.style.opacity = "0";
+        logo.classList.add("show");
+    }
+
+    if (value >= 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+            document.querySelector(".splash").classList.add("fade-out");
+            setTimeout(() => {
+                window.location.href = "./index.html";
+            }, 1000);
+        }, 2000);
+    }
+
+}, 40);
+</script>
+</body>
+</html>

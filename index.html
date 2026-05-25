@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>BiciTiangue</title>
+  <link rel="stylesheet" href="./style/selectores_base.css" />
+  <link rel="stylesheet" href="./style/main_carousel.css" />
+  <link rel="stylesheet" href="./style/hero_title.css" />
+  <link rel="shortcut icon" href="./img/favicon_bt.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./style/navbar.css">
+  <link rel="stylesheet" href="./style/productos.css" />
+  <link rel="stylesheet" href="./style/servicios.css">
+  <link rel="stylesheet" href="./style/footer.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="container">
+      <!-- LOGO -->
+      <div class="logo"><img src="./img/logo_bicitiangue.png" width="75" alt="logo BiciTiangue"></div>
+
+      <!-- MENÚ -->
+      <nav class="menu">
+        <a href="#">Bicicletas</a>
+        <a href="#servicios">Taller</a>
+        <a href="#">Accesorios</a>
+        <a href="#">Contactos</a>
+      </nav>
+
+      <!-- BOTÓN -->
+      <div class="acciones">
+        <button class="btn_menu">Ofertas</button>
+      </div>
+
+      <!-- HAMBURGER barritas del menú-->
+      <div class="hamburger">&#9776;</div>
+    </div>
+  </header>
+  <script src="./scripts/navbar.js"></script>
+
+
+  <main>
+    <!-- MAIN CAROUSEL -->
+    <div class="main_carousel">
+      <div class="main_slide active" style="background-image: url('./img/velocidad.jpg')">
+        <div class="main_overlay">
+          <h1>Velocidad</h1>
+          <!--  <h2>¡Siente el viento en tu rostro!</h2> -->
+        </div>
+      </div>
+
+      <div class="main_slide" style="background-image: url('./img/montana.jpg')">
+        <div class="main_overlay">
+          <h1>Montaña</h1>
+          <!--  <h2>Desafía los límites...</h2> -->
+        </div>
+      </div>
+
+      <div class="main_slide" style="background-image: url('./img/resistencia.jpg')">
+        <div class="main_overlay">
+          <h1>Resistencia</h1>
+          <!--  <h2>¡Más lejos, más fuerte!</h2> -->
+        </div>
+      </div>
+
+      <div class="main_slide" style="background-image: url('./img/calidad.jpg')">
+        <div class="main_overlay">
+          <h1>Calidad</h1>
+          <!--  <h2>Excelencia en cada detalle</h2> <img src="./img/logo_bicitiangue.png" width="75" alt="logo bicitiangue" />-->
+        </div>
+      </div>
+
+      <!-- CONTROLES -->
+      <div class="main_prev">&#10094;</div>
+      <div class="main_next">&#10095;</div>
+
+      <!-- INDICADORES -->
+      <div class="main_dots"></div>
+    </div>
+    <script src="./scripts/main_carousel.js"></script>
+
+    <!-- Productos -->
+    <section class="productos">
+      
+      <div class="productos_carousel_container">
+
+        <button class="productos_btn productos_prev">&#10094;</button>
+
+        <div class="productos_carousel" id="productos_carousel">
+
+          <!-- PRODUCTO -->
+          <div class="productos_card">
+            <img src="./img/skinsuits.jpg" alt="Skinsuits">
+            <h3>Skinsuits</h3>
+            <button>Detalle</button>
+          </div>
+
+          <div class="productos_card">
+            <img src="./img/shokz.jpg" alt="Shokz">
+            <h3>Shokz</h3>
+            <button>Detalle</button>
+          </div>
+
+          <div class="productos_card">
+            <img src="./img/camisas_tie_dye.jpg" alt="Camisas Tie Dye">
+            <h3>Camisas Tie Dye</h3>
+            <button>Detalle</button>
+          </div>
+
+          <div class="productos_card">
+            <img src="./img/Bicicletas.jpg" alt="Bicicletas">
+            <h3>Bicicletas</h3>
+            <button>Detalle</button>
+          </div>
+
+          <div class="productos_card">
+            <img src="./img/accesorios.jpg" alt="Accesorios">
+            <h3>Accesorios</h3>
+            <button>Detalle</button>
+          </div>
+
+        </div>
+
+        <button class="productos_btn productos_next">&#10095;</button>
+      </div>
+    </section>
+    <script src="./scripts/productos.js"></script>
+
+    <!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+    <h2>Taller de Servicios Especializados</h2>
+    <div class="servicios_grid">
+
+        <div class="servicios_card">
+            <img src="./img/taller_servicio01.png" alt="Revisión de Torques">
+            <div class="servicios_card-content">
+                <h3>Revisión de Torques</h3>
+                <p>
+                    Ajuste preciso con herramientas calibradas para garantizar seguridad y rendimiento óptimo.
+                </p>
+            </div>
+        </div>
+
+        <div class="servicios_card">
+            <img src="./img/taller_servicio02.png" alt="Purgado de Frenos">
+            <div class="servicios_card-content">
+                <h3>Purgado de Frenos</h3>
+                <p>
+                    Eliminación de aire en sistemas hidráulicos para lograr una frenada potente y confiable.
+                </p>
+            </div>
+        </div>
+
+        <div class="servicios_card">
+            <img src="./img/taller_servicio03.png" alt="Suspensiones">
+            <div class="servicios_card-content">
+                <h3>Suspensiones</h3>
+                <p>
+                    Servicio completo de horquillas y amortiguadores para un control superior en cualquier terreno.
+                </p>
+            </div>
+        </div>
+
+        <div class="servicios_card">
+            <img src="./img/taller_servicio04.png" alt="Transmisiones">
+            <div class="servicios_card-content">
+                <h3>Transmisiones</h3>
+                <p>
+                    Ajuste fino de cambios mecánicos y electrónicos para cambios suaves y precisos.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+</main>
+
+    <footer class="footer-negro">
+        <img src="./img/footer_image.png" alt="Logo BiciTiangue" height="375" width="100%" class="footer-logo">
+    <div class="footer-container">
+        
+        <div class="footer-column">
+            <h3><i class="icon-map"></i> UBICACIÓN</h3>
+            <address>
+                Plaza Maderas, Módulo 4<br>
+                Managua, Nicaragua<br>
+                <a href="https://www.google.com/maps/place/Plaza+Maderas/@12.123456,-86.123456,17z" target="_blank">Ver en Google Maps</a>
+            </address>
+        </div>
+
+        <div class="footer-column">
+            <h3><i class="icon-phone"></i> TELÉFONO</h3>
+            <p>
+                +505 8875 7904<br>
+                Lunes a Sábado<br>
+                9:00 a.m. – 6:00 p.m.
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3><i class="icon-mail"></i> CORREO</h3>
+            <p>
+                <a href="mailto:info@bicitiangue.com">info@bicitiangue.com</a><br>
+                <a href="mailto:gerencia@bicitiangue.com">gerencia@bicitiangue.com</a>
+            </p>
+        </div>
+
+        <div class="footer-column">
+            <h3>SÍGUENOS</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-column special">
+            <h3><i class="icon-wrench"></i> TALLER DE ALTO RENDIMIENTO</h3>
+            <p>Servicio profesional para ciclistas que llevan su pasión al siguiente nivel.</p>
+            <a href="https://www.bicitiangue.com" class="footer-link">www.bicitiangue.com</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 <span class="highlight">BiciTiangue</span>. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

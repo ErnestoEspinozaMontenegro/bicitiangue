@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let persona = {};
+        let personas = [];
+        for (let i = 0; i < 3; i++) {
+                persona.nombre = prompt("Ingrese el nombre de la persona");
+                persona.edad = parseInt(prompt("Ingrese la edad de la persona"));
+                persona.sexo = prompt("Ingrese el sexo de la persona");
+                personas.push(persona);
+            }
+        let i = 0;
+        for (i; i < personas.length; i++) {
+            document.writeln(`Nombre: ${i + 1}. ${personas[i]['nombre']}, Edad: ${personas[i]['edad']}, Sexo: ${personas[i]['sexo']}<br>`);
+            i++;
+        }
+
+    </script>
+</body>
+
+</html>

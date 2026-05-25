@@ -1,0 +1,19 @@
+ .hero-title {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: clamp(3.5rem, 8vw, 6rem);
+     line-height: 0.95;
+     margin-bottom: 1.5rem;
+     color: var(--deep-black);
+ }
+
+ .hero-title span {
+     color: var(--coral-red);
+ }
+
+ .hero-subtitle {
+     font-size: 1.15rem;
+     color: var(--medium-gray);
+     max-width: 420px;
+     line-height: 1.8;
+     margin-bottom: 2.5rem;
+ }
