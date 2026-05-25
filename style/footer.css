@@ -1,45 +1,49 @@
 /* Configuración General */
 .footer-negro {
-    background-color: #121212; /* Fondo casi negro */
+    background-color: #121212;
     color: #ffffff;
-    padding: 40px 20px 20px;
+    padding: clamp(20px, 5vw, 50px) clamp(15px, 3vw, 30px) clamp(15px, 3vw, 25px);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap; /* Permite que las columnas bajen en móviles */
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 30vw, 250px), 1fr));
+    gap: clamp(20px, 3vw, 40px);
+    padding-bottom: clamp(15px, 2vw, 25px);
 }
 
 .footer-column {
-    flex: 1;
-    min-width: 200px; /* Evita que las columnas se compriman demasiado */
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 12px);
 }
 
 /* Títulos en Dorado/Amarillo */
 .footer-column h3 {
-    color: #10275B; /* Color dorado similar a la imagen */
-    font-size: 0.9rem;
+    color: #10275B;
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
     letter-spacing: 1px;
-    margin-bottom: 15px;
+    margin: 0;
     border-left: 3px solid #d4af37;
     padding-left: 10px;
+    font-weight: 600;
 }
 
 .footer-column p, .footer-column address {
     font-style: normal;
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 1.2vw, 0.9rem);
     line-height: 1.6;
     color: #cccccc;
+    margin: 0;
 }
 
 .footer-column a {
     color: inherit;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .footer-column a:hover {
@@ -48,49 +52,122 @@
 
 /* Estilo para el link de la web */
 .footer-link {
-    display: block;
-    margin-top: 10px;
+    display: inline-block;
+    margin-top: clamp(5px, 1vw, 10px);
     color: #d4af37 !important;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
 }
 
 /* Redes Sociales */
 .social-icons {
     display: flex;
-    gap: 15px;
-    font-size: 1.5rem;
+    gap: clamp(10px, 2vw, 18px);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+.social-icons a {
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+    color: #d4af37;
+}
+
+/* Logo */
+.footer-logo {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: clamp(15px, 3vw, 25px);
 }
 
 /* Línea de Copyright */
 .footer-bottom {
-    margin-top: 40px;
+    margin-top: clamp(20px, 3vw, 35px);
     border-top: 1px solid #333;
-    padding-top: 20px;
+    padding-top: clamp(15px, 2vw, 20px);
     text-align: center;
-    font-size: 0.8rem;
+    font-size: clamp(0.7rem, 1vw, 0.85rem);
     color: #777;
 }
 
 .highlight {
     color: #d4af37;
+    font-weight: bold;
 }
 
-/* Ajustes para móviles */
-@media (max-width: 768px) {
+/* TABLET */
+@media (max-width: 1024px) {
+    .footer-negro {
+        padding: clamp(20px, 4vw, 35px) clamp(12px, 2vw, 25px);
+    }
+
     .footer-container {
-        flex-direction: column;
+        grid-template-columns: repeat(auto-fit, minmax(clamp(140px, 35vw, 220px), 1fr));
+        gap: clamp(15px, 2.5vw, 30px);
+    }
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+    .footer-negro {
+        padding: clamp(15px, 3vw, 25px) clamp(10px, 2vw, 15px);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: clamp(15px, 2vw, 25px);
         text-align: center;
     }
-    
+
+    .footer-column {
+        align-items: center;
+    }
+
     .footer-column h3 {
         border-left: none;
         border-bottom: 2px solid #d4af37;
-        display: inline-block;
-        padding: 0 10px 5px;
+        padding: 0 10px clamp(5px, 1vw, 8px);
     }
 
     .social-icons {
         justify-content: center;
+    }
+
+    .footer-logo {
+        max-height: 200px;
+        margin-bottom: clamp(10px, 2vw, 15px);
+    }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+    .footer-negro {
+        padding: 12px 10px;
+    }
+
+    .footer-container {
+        gap: 12px;
+    }
+
+    .footer-column h3 {
+        font-size: 0.8rem;
+    }
+
+    .footer-column p,
+    .footer-column address {
+        font-size: 0.75rem;
+    }
+
+    .social-icons {
+        font-size: 1.3rem;
+        gap: 12px;
+    }
+
+    .footer-logo {
+        max-height: 150px;
     }
 }

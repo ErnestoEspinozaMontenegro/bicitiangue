@@ -1,49 +1,125 @@
 /* SECCIÓN SERVICIOS */
 .servicios {
-    padding: 20px 20px;
+    padding: clamp(20px, 5vw, 50px) clamp(15px, 5vw, 40px);
     text-align: center;
-    text-shadow: #10275B;
+    background: linear-gradient(135deg, rgba(16, 39, 91, 0.05) 0%, rgba(0, 170, 255, 0.05) 100%);
 }
 
 .servicios h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
     color: #00aaff;
-    margin-bottom: 40px;
+    margin-bottom: clamp(20px, 3vw, 40px);
+    letter-spacing: 1px;
 }
 
 .servicios_grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 40vw, 280px), 1fr));
+    gap: clamp(15px, 3vw, 30px);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .servicios_card {
-    background: rgba(255, 255, 255, 0.525);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
     overflow: hidden;
-    transition: 0.4s;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
 .servicios_card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0,170,255,0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,170,255,0.3);
 }
 
 .servicios_card img {
     width: 100%;
-    height: 200px;
-    object-fit:fill;
+    height: clamp(150px, 30vw, 220px);
+    object-fit: cover;
+    display: block;
 }
 
 .servicios_card-content {
-    padding: 20px;
+    padding: clamp(15px, 3vw, 25px);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .servicios_card h3 {
     color: #00d4ff;
+    margin: 0 0 clamp(8px, 1vw, 12px) 0;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
 
 .servicios_card p {
-    font-size: 0.95rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
     opacity: 0.85;
+    line-height: 1.5;
+    margin: 0;
+    color: #333;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+    .servicios {
+        padding: clamp(15px, 3vw, 30px) clamp(12px, 3vw, 25px);
+    }
+
+    .servicios_grid {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 40vw, 250px), 1fr));
+        gap: clamp(12px, 2.5vw, 25px);
+    }
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+    .servicios {
+        padding: clamp(15px, 3vw, 25px) clamp(10px, 2vw, 15px);
+    }
+
+    .servicios h2 {
+        margin-bottom: clamp(15px, 2.5vw, 25px);
+    }
+
+    .servicios_grid {
+        grid-template-columns: 1fr;
+        gap: clamp(12px, 2vw, 20px);
+    }
+
+    .servicios_card img {
+        height: clamp(120px, 25vw, 180px);
+    }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+    .servicios {
+        padding: 12px 10px;
+    }
+
+    .servicios h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .servicios_grid {
+        gap: 10px;
+    }
+
+    .servicios_card-content {
+        padding: 12px;
+    }
+
+    .servicios_card h3 {
+        font-size: 0.95rem;
+    }
+
+    .servicios_card p {
+        font-size: 0.8rem;
+    }
 }

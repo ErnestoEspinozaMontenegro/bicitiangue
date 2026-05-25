@@ -12,20 +12,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 5px;
+    padding: clamp(5px, 2vw, 15px);
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* LOGO */
 .logo {
-    font-size: 22px;
+    font-size: clamp(18px, 5vw, 24px);
     font-weight: bold;
     color: white;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: clamp(50px, 8vw, 80px);
+    height: auto;
 }
 
 /* MENÚ */
 .menu {
     display: flex;
-    gap: 20px;
+    gap: clamp(10px, 2vw, 25px);
 }
 
 .menu a {
@@ -33,6 +41,8 @@
     color: whitesmoke;
     font-weight: 100;
     position: relative;
+    font-size: clamp(12px, 2vw, 16px);
+    transition: color 0.3s;
 }
 
 /* EFECTO HOVER PRO */
@@ -56,9 +66,12 @@
     background: red;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: clamp(6px, 1vw, 12px) clamp(10px, 2vw, 18px);
     cursor: pointer;
     border-radius: 5px;
+    font-size: clamp(12px, 1.5vw, 14px);
+    transition: background 0.3s;
+    white-space: nowrap;
 }
 
 .btn_menu:hover {
@@ -68,23 +81,51 @@
 /* HAMBURGER */
 .hamburger {
     display: none;
-    font-size: 25px;
+    font-size: clamp(20px, 5vw, 28px);
     color: white;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
-/* RESPONSIVE */
-@media(max-width: 768px) {
+/* ACCIONES */
+.acciones {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* TABLET (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: clamp(8px, 2vw, 12px);
+    }
+}
+
+/* RESPONSIVO MÓVIL */
+@media (max-width: 768px) {
+    .container {
+        padding: clamp(8px, 2vw, 10px);
+    }
 
     .menu {
         position: absolute;
-        top: 40px;
+        top: 100%;
         left: 0;
         width: 100%;
         background: #10275B;
         flex-direction: column;
         align-items: center;
         display: none;
+        gap: 0;
+        padding: 15px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+
+    .menu a {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .menu.active {
@@ -97,5 +138,16 @@
 
     .acciones {
         display: none;
+    }
+}
+
+/* MÓVILES PEQUEÑOS (max-width: 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 8px 5px;
+    }
+
+    .logo {
+        min-width: 45px;
     }
 }

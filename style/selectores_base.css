@@ -1,6 +1,48 @@
 /* color de marca #10275B*/
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: aliceblue;
+    font-size: 16px;
+}
+
+/* VARIABLES DE ESTILOS */
+:root {
+    --primary-color: #10275B;
+    --secondary-color: #00aaff;
+    --accent-color: red;
+    --dark-bg: #121212;
+    --light-text: whitesmoke;
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+}
+
+/* RESPONSIVE TYPOGRAPHY */
+h1 { font-size: clamp(1.5rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.25rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1rem, 3vw, 1.5rem); }
+p { font-size: clamp(0.875rem, 2vw, 1rem); }
+
+/* DEVICE RESPONSIVE SETUP */
+@media (max-width: 480px) {
+    body { font-size: 14px; }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    body { font-size: 15px; }
+}
+
+@media (min-width: 1024px) {
+    body { font-size: 16px; }
 }
