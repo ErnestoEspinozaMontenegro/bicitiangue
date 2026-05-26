@@ -138,7 +138,12 @@
         overflow-y: auto;
         gap: clamp(12px, 3vw, 20px);
         scroll-snap-type: y mandatory;
-        max-height: 600px;
+        max-height: 800px;
+        scrollbar-width: none;
+    }
+
+    .productos_carousel::-webkit-scrollbar {
+        display: none;
     }
 
     .productos_card {
@@ -146,6 +151,10 @@
         min-width: unset;
         padding: clamp(10px, 2vw, 14px);
         scroll-snap-align: start;
+    }
+
+    .productos_card img {
+        height: clamp(220px, 55vw, 320px);
     }
 
     .productos_btn {
@@ -165,12 +174,21 @@
         overflow-y: auto;
         gap: clamp(10px, 2vw, 15px);
         max-height: 600px;
+        scrollbar-width: none;
+    }
+
+    .productos_carousel::-webkit-scrollbar {
+        display: none;
     }
 
     .productos_card {
         width: 100%;
         min-width: unset;
         padding: clamp(8px, 1.5vw, 10px);
+    }
+
+    .productos_card img {
+        height: clamp(200px, 50vw, 280px);
     }
 
     .productos_btn {
