@@ -133,29 +133,47 @@
     }
 
     .productos_carousel {
-        gap: clamp(6px, 1.5vw, 10px);
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        gap: clamp(12px, 3vw, 20px);
+        scroll-snap-type: y mandatory;
+        max-height: 600px;
     }
 
     .productos_card {
-        min-width: clamp(100px, 22vw, 160px);
+        width: 100%;
+        min-width: unset;
         padding: clamp(10px, 2vw, 14px);
+        scroll-snap-align: start;
+    }
+
+    .productos_btn {
+        display: none;
     }
 }
 
 /* MÓVILES PEQUEÑOS */
 @media (max-width: 480px) {
     .productos_carousel_container {
-        gap: clamp(5px, 1vw, 8px);
+        gap: 0;
+    }
+
+    .productos_carousel {
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: auto;
+        gap: clamp(10px, 2vw, 15px);
+        max-height: 600px;
     }
 
     .productos_card {
-        min-width: clamp(85px, 20vw, 120px);
+        width: 100%;
+        min-width: unset;
         padding: clamp(8px, 1.5vw, 10px);
     }
 
     .productos_btn {
-        min-width: 35px;
-        min-height: 35px;
-        padding: 6px;
+        display: none;
     }
 }
