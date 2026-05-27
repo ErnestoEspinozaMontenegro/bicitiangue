@@ -1,0 +1,7 @@
+Dispositivo	Resolución	Proporción	Nota
+Desktop		1920×1080px	16:9		Tamaño ideal, cubre full HD
+Tablet		1280×720px	16:9		Escalada de desktop
+Móvil		768×480px	16:9		Optimizado para 60vh
+Móvil Pequeño	480×270px	16:9		Mínimo para 50vh
+
+Opción B: Se puede usar imagen única de 1920×1080px (16:9) que se escale automáticamente con background-size: cover en todos los dispositivos.

@@ -1,0 +1,5 @@
+Tamaños recomendados imágenes producto:
+Dispositivo	Tamaño Original Proporción
+Desktop		200×120px	16:10
+Tablet		600×280px	21:10
+Móvil Pequeño	480×260px	1.85:1

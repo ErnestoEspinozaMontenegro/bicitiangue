@@ -1,0 +1,7 @@
+Dispositivo	Resolución 		Proporción	Nota
+Desktop		280×220px		1.27:1		Máximo de grid-template-columns
+Tablet		250×200px		1.25:1		Para 40vw ancho máximo
+Móvil		100% ancho × 180px	Responsive	Alto fijo con ancho fluido
+Móvil Pequeño	100% ancho × 150px	Responsive	Menor altura optimizada
+
+Recomendación: Usa imágenes cuadradas o ligeramente rectángulares (1.2-1.3:1) como: 300×240px (una única imagen que escale bien con object-fit: cover)

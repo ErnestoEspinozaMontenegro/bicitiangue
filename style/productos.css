@@ -67,11 +67,21 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
+/* Tamaño recomendado original: 200x120px (16:10) */
 .productos_card img {
     width: 100%;
     height: clamp(80px, 20vw, 120px);
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
+    transition: all 0.3s ease;
+    filter: brightness(1) saturate(1.1);
+    box-shadow: 0 4px 12px rgba(255, 60, 0, 0.2);
+}
+
+.productos_card img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.15) saturate(1.3);
+    box-shadow: 0 8px 20px rgba(255, 60, 0, 0.4);
 }
 
 /* BOTONES CARRUSEL */
@@ -135,10 +145,10 @@
     .productos_carousel {
         flex-direction: column;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: visible;
         gap: clamp(12px, 3vw, 20px);
-        scroll-snap-type: y mandatory;
-        max-height: 800px;
+        scroll-snap-type: none;
+        max-height: none;
         scrollbar-width: none;
     }
 
@@ -150,11 +160,20 @@
         width: 100%;
         min-width: unset;
         padding: clamp(10px, 2vw, 14px);
-        scroll-snap-align: start;
+        scroll-snap-align: none;
     }
 
+    /* Tamaño recomendado original: 600x280px (21:10) para tablet */
     .productos_card img {
-        height: clamp(220px, 55vw, 320px);
+        height: clamp(220px, 55vw, 280px);
+        transition: all 0.3s ease;
+        filter: brightness(1) saturate(1.1);
+    }
+
+    .productos_card img:hover {
+        transform: scale(1.05);
+        filter: brightness(1.15) saturate(1.3);
+        box-shadow: 0 8px 20px rgba(255, 60, 0, 0.4);
     }
 
     .productos_btn {
@@ -171,9 +190,9 @@
     .productos_carousel {
         flex-direction: column;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: visible;
         gap: clamp(10px, 2vw, 15px);
-        max-height: 600px;
+        max-height: none;
         scrollbar-width: none;
     }
 
@@ -187,8 +206,16 @@
         padding: clamp(8px, 1.5vw, 10px);
     }
 
+    /* Tamaño recomendado original: 480x260px (1.85:1) para móvil pequeño */
     .productos_card img {
-        height: clamp(200px, 50vw, 280px);
+        height: clamp(200px, 50vw, 260px);
+        transition: all 0.3s ease;
+        filter: brightness(1) saturate(1.1);
+    }
+
+    .productos_card img:hover {
+        transform: scale(1.04);
+        filter: brightness(1.15) saturate(1.3);
     }
 
     .productos_btn {
